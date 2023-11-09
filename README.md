@@ -72,7 +72,7 @@ Type ```evillimiter``` or ```python3 bin/evillimiter``` to run the tool.
 
 - **Limits IPv4 connctions only**, since [ARP spoofing](https://en.wikipedia.org/wiki/ARP_spoofing) requires the ARP packet that is only present  on IPv4 networks.
 ## WSL Support 
-add re-compile your kernel with those parameters (.config (copy from Mircosoft Directory))
+re-compile your kernel (WSL-kernel) with those parameters added inside .config (copy from Mircosoft Directory))<br>
 CONFIG_NET_SCHED=y<br>
 CONFIG_NET_SCH_CBQ=m<br>
 CONFIG_NET_SCH_HTB=y<br>
