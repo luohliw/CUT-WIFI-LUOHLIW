@@ -1,14 +1,15 @@
 import os
 import subprocess
+from sys import stderr, stdout
 from evillimiter.console.io import IO
 
 DEVNULL = open(os.devnull, 'w')
 
 def check_doas_sudo():
     try: 
-        subprocess.check_output("which doas", shell=True)
+        subprocess.run("which doas", check=True, stdout=DEVNULL, stderr=DEVNULL, shell=True)
         return "doas "
-    except:
+    except subprocess.CalledProcessError as e:
         return "sudo "
 
 def execute(command, root=True):
