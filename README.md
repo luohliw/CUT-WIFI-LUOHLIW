@@ -13,6 +13,7 @@ A tool to monitor, analyze and limit the bandwidth (upload/download) of devices 
 
 **Searching for a Windows-compatible version?**<br>
 Check out the open-source alternative [EvilLimiter for Windows](https://github.com/bitbrute/evillimiter-windows).
+Also you can run this tool on wsl2/wslg kernels just recompile the kernel with the stock configs and add the [configs here](#wsl-support)
 
 ## Requirements
 - Linux distribution
