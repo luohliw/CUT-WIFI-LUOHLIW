@@ -11,9 +11,9 @@
 A tool to monitor, analyze and limit the bandwidth (upload/download) of devices on your local network without physical or administrative access.<br>
 ```evillimiter``` employs [ARP spoofing](https://en.wikipedia.org/wiki/ARP_spoofing) and [traffic shaping](https://en.wikipedia.org/wiki/Traffic_shaping) to throttle the bandwidth of hosts on the network.
 
-**Searching for a Windows-compatible version?**<br>
-Check out the open-source alternative [EvilLimiter for Windows](https://github.com/bitbrute/evillimiter-windows). <br>
-Also you can run this tool on wsl2/wslg kernels just recompile the kernel with the stock configs and add the [configs here](#wsl-support)
+## Searching for a Windows-compatible version?
+- Check out the open-source alternative [EvilLimiter for Windows](https://github.com/bitbrute/evillimiter-windows). <br>
+- Also you can run this tool on wsl2/wslg kernels just recompile the kernel with the stock configs and add the [configs here](#wsl-support)
 
 ## Requirements
 - Linux distribution
