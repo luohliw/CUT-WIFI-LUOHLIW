@@ -24,7 +24,7 @@ Possibly missing python packages will be installed during the installation proce
 ## Installation
 
 ```bash
-git clone https://github.com/ConsumedKing/evillimiter
+git clone https://github.com/GigaArchitect/evillimiter
 cd evillimiter
 sudo python3 setup.py install
 ```
