@@ -1,5 +1,5 @@
-import time
 import threading
+import time
 
 
 class HostWatcher(object):
@@ -9,8 +9,8 @@ class HostWatcher(object):
         self._hosts = set()
         self._hosts_lock = threading.Lock()
 
-        self._interval = 45     # scan interval in s
-        self._iprange = None    # custom ip range to be watched
+        self._interval = 45  # scan interval in s
+        self._iprange = None  # custom ip range to be watched
         self._settings_lock = threading.Lock()
 
         self._log_list = []
@@ -62,7 +62,7 @@ class HostWatcher(object):
 
     def start(self):
         thread = threading.Thread(target=self._watch, args=[], daemon=True)
-        
+
         self._running = True
         thread.start()
 
@@ -76,10 +76,19 @@ class HostWatcher(object):
             self._hosts_lock.release()
 
             if len(hosts) > 0:
-                reconnected_hosts = self._scanner.scan_for_reconnects(hosts, self.iprange)
+                reconnected_hosts = self._scanner.scan_for_reconnects(
+                    hosts, self.iprange
+                )
                 for old_host, new_host in reconnected_hosts.items():
                     self._reconnection_callback(old_host, new_host)
                     with self._log_list_lock:
-                        self._log_list.append({ 'old': old_host, 'new': new_host, 'time': time.strftime('%Y-%m-%d %H:%M %p') })
+                        self._log_list.append(
+                            {
+                                "old": old_host,
+                                "new": new_host,
+                                "time": time.strftime("%Y-%m-%d %H:%M %p"),
+                            }
+                        )
 
             time.sleep(self.interval)
+
